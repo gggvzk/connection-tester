@@ -3,7 +3,7 @@ name: Unzip and Commit
 on:
   push:
     paths:
-      - "*.zip"
+      - "connection_tester.zip"
 
 jobs:
   unzip:
@@ -19,7 +19,7 @@ jobs:
       - name: ZIPを解凍
         run: |
           mkdir -p extracted
-          unzip -o *.zip -d extracted
+          unzip -o connection_tester.zip -d extracted
 
       - name: 変更を確認
         run: git status
